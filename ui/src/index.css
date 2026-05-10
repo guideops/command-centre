@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --surface-2: #1a1a27;
+  --border: #2a2a3d;
+  --border-glow: #3d3d5c;
+  --text: #e8e8f0;
+  --text-dim: #8888a0;
+  --text-subtle: #5a5a70;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 20% 10%, rgba(77,124,255,0.08), transparent 40%),
+                    radial-gradient(circle at 80% 90%, rgba(139,92,246,0.06), transparent 40%);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-glow); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-subtle); }
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid #4d7cff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Number right-align in tables */
+td.num { text-align: right; font-family: 'JetBrains Mono', monospace; }
+
+/* Kicker labels */
+.kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #4d7cff, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Accent border glow */
+.glow-border {
+  border: 1px solid var(--border);
+  box-shadow: 0 0 0 1px rgba(77, 124, 255, 0.1);
+}
+
+/* Loading skeleton */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}

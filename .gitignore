@@ -1,0 +1,43 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.pyo
+
+# Environment — never commit secrets
+.env
+*.bak.*
+
+# Database — local only
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/
+
+# Logs
+logs/
+*.log
+
+# Node
+ui/node_modules/
+ui/dist/
+ui/.tanstack/
+
+# Playwright artifacts
+ui/test-results/
+ui/playwright-report/
+
+# Mission Control queue (runtime state)
+.tmp/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
